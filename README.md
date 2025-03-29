@@ -87,15 +87,5 @@ Once the pre-processing of the mesh file is complete, the included Python file c
 
 ---
 
-## 📬 Contact
-
-For queries:
-
-**Dineth Ilapperuma**  
-- [LinkedIn](https://www.linkedin.com/in/ilapperuma/)  
-- 📧 dineth.ilapperuma@gmail.com
-
----
-
 ✨ Happy simulating!
 
