@@ -1,57 +1,95 @@
-# StarCCM-Aneurysm-Automation
-These macro are designed to hep automate your STAR-CCM post-processes. This repository contains macros which sets the required prerequisites for the simulation. Once pre-processing of mesh file completed, run the supplied python file to complete pre-processing and post-processing by generating a presentation with all scenes and plots labelled. Deeply useful for aneurysms, medical imaging, and other projects which require documentation of multiple simulations. 
+======================================================================
+StarCCM-Aneurysm-Automation
+======================================================================
 
-NOTE: You should be able to customize this project using the .java file.
+These macros are designed to help automate your STAR-CCM+ post-processing workflows. This repository is especially useful for projects involving aneurysms, medical imaging, and other simulations that require consistent documentation across multiple runs.
 
-Files included:
+Once the pre-processing of the mesh file is complete, the included Python file can be run to finalize both pre- and post-processing. This includes auto-generating a presentation with all scenes and plots labeled and ready for reporting.
 
-a1continua.java: This is the inital macro to be used in STAR-CCM. This creates the cotinua with the properties of blood
+======================================================================
+📌 Note:
+You can customize most of the behavior and parameters using the `.java` macro files included in this repository.
 
-a2inletvel.java: Second macro to be used, sets the varying velocity profile by attaching the required .csv file
+======================================================================
+📂 Files Included
 
---NOTE: Ensure file directory same (saved in P-drive)
+1. **a1continua.java**
+   - Sets up the continua with blood properties.
+   
+2. **a2inletvel.java**
+   - Applies a varying velocity profile using the `unsteadyinlet.csv` file.
+   - ⚠ Ensure the file directory remains the same (e.g., P-drive).
 
-a3velocityprobe.java: Sets a velocity probe at inlet and plots a velocity-time graph
+3. **a3velocityprobe.java**
+   - Places a velocity probe at the inlet.
+   - Generates a velocity-time graph.
 
-a4monitors.java: Creates monitors of of mean WSS and sum of WSS (i/j/k components)
+4. **a4monitors.java**
+   - Creates monitors for:
+     - Mean Wall Shear Stress (WSS)
+     - Sum of WSS (i, j, k components)
 
-a5fieldfunctions.java: Creates custom field functions of OSI, TA-WSS, and RRT
+5. **a5fieldfunctions.java**
+   - Defines custom field functions:
+     - OSI (Oscillatory Shear Index)
+     - TA-WSS (Time-Averaged WSS)
+     - RRT (Relative Residence Time)
 
-a6mesheroperations.java: Creates mesh operation of approx. 1,000,000 cells
+6. **a6mesheroperations.java**
+   - Sets up mesh operations targeting ~1 million cells.
 
-a7stoppingcrit.java: Creates stopping criteria of 2 cardiac cycles (1.9 seconds)
+7. **a7stoppingcrit.java**
+   - Sets stopping criteria for 2 cardiac cycles (approx. 1.9 seconds).
 
-a8views.java: Saves isometric views (front and back)
+8. **a8views.java**
+   - Saves isometric screenshots (front and back views).
 
-a9outlet.java: Sets Outlet Split Factor as 0.5
+9. **a9outlet.java**
+   - Sets outlet split factor to 0.5.
 
-a10scenes.java: Creates scalar scenes of WSS, TA-WSS, OSI, RRT, Streamlines
+10. **a10scenes.java**
+    - Creates scalar scenes for:
+      - WSS
+      - TA-WSS
+      - OSI
+      - RRT
+      - Streamlines
 
-unsteadyinlet.csv: CSV file of velocity-time used by a2inletvel.java macro
+11. **unsteadyinlet.csv**
+    - Contains velocity-time data for a normal cardiac cycle.
+    - Used by `a2inletvel.java`.
 
---NOTE: Values in .csv file are that of a normal cardiac cycle and from 
+======================================================================
+▶️ How to Run
 
+1. Open your active simulation in STAR-CCM+.
+2. Navigate to:
+   `File → Macro → Play Macro`
+3. Run each macro **in numerical order**:
+   - Begin with `a1continua.java`, then `a2inletvel.java`, and so on.
+4. Allow each macro to finish before proceeding to the next.
+5. Macros are modular — feel free to skip or customize as needed depending on your workflow.
 
+======================================================================
+🛠 Patch Notes
 
-STEPS TO RUN:
+📌 Version 1.0
+- Initial release.
+- Added base macros for setup, monitoring, field functions, and visualization.
+- Generates labeled plots and scenes.
 
-Go to your active simulation file in STAR-CCM. Hit File --> Macro --> Play Macro --> Select macros in order of number
-Wait for the macro to finish. It will generate the required output
-Once macro is completed, run the next macro depending on preference.
-Macros are currently split into 10 sections, to give the user independence on creating 
+📌 Version 1.1 (Work in Progress)
+- Fixed velocity probe error (angle-based mesh import issue).
+- All scene images now auto-labeled.
+- Added a "mega" macro to run all sub-macros in sequence.
 
+======================================================================
+📬 Contact
 
-PATCH NOTES:
+For queries or contributions:
+- Dineth Ilapperuma
+- LinkedIn: https://www.linkedin.com/in/ilapperuma/
+- Email: dineth.ilapperuma@gmail.com
 
-V 1.0 -->
-Created base program
-Generates plots and scenes
-
-V 1.1 (work in progress)-->
-Fixed Velocity probe error if mesh file imported at different angle.
-All images are now auto labelled with image names.
-Created mega compiled macro, that runs all sub macros
-
-
-
-
+======================================================================
+Happy simulating!
