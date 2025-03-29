@@ -42,6 +42,7 @@ Macros are currently split into 10 sections, to give the user independence on cr
 
 
 PATCH NOTES:
+
 V 1.0 -->
 Created base program
 Generates plots and scenes
