@@ -1,6 +1,6 @@
-======================================================================
+=
 StarCCM-Aneurysm-Automation
-======================================================================
+=
 
 These macros are designed to help automate your STAR-CCM+ post-processing workflows. This repository is especially useful for projects involving aneurysms, medical imaging, and other simulations that require consistent documentation across multiple runs.
 
